@@ -24,7 +24,7 @@
    recolours the section bands, chips and rules along with everything else. */
 @supports (color: color-mix(in oklab, red, red)) {
   :root {
-    --brand-wash: color-mix(in oklab, var(--brand-accent) 3%, #faf8f4);
+    --brand-wash: color-mix(in oklab, var(--brand-accent) 4%, #faf8f4);
     --brand-chip: color-mix(in oklab, var(--brand-accent) 7%, #faf8f4);
     --brand-rule-accent: color-mix(in oklab, var(--brand-accent) 30%, #e2dcd3);
   }
