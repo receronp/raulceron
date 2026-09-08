@@ -158,12 +158,10 @@ export const content = {
         'A short description of the system and the problem is enough to start. I reply to everything within two working days.',
       cta: 'hola@raulceron.es',
       availability: 'Available for new projects',
-      billing: 'Invoicing in EUR or USD · Spain, Mexico and the United States',
+      billing: 'Invoicing in Spain, Mexico and the United States',
     },
     footer: {
-      legal: 'Legal information',
       rights: 'All rights reserved.',
-      identity: 'Identification details',
     },
   },
 
@@ -312,12 +310,10 @@ export const content = {
         'Con una descripción breve del sistema y del problema es suficiente para empezar. Respondo a todo en un plazo de dos días laborables.',
       cta: 'hola@raulceron.es',
       availability: 'Disponible para nuevos proyectos',
-      billing: 'Facturación en EUR o USD · España, México y Estados Unidos',
+      billing: 'Facturación en España, México y Estados Unidos',
     },
     footer: {
-      legal: 'Información legal',
       rights: 'Todos los derechos reservados.',
-      identity: 'Datos identificativos',
     },
   },
 } as const;
