@@ -48,20 +48,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       {locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}
     </a>
 
-    <header class="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur">
+    <!-- Opaque, not paper/90 + blur: over the dark contact section the
+         translucent version composited to #e5e1de, a muddy band that dropped
+         the nav links to 4.23:1. Solid paper holds 5.18:1 everywhere. -->
+    <header class="sticky top-0 z-40 border-b border-rule-accent bg-paper">
       <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-4">
         <a href={locale === 'es' ? '/es/' : '/'} class="flex items-center" aria-label={brand.name}>
           <img src={brand.logo} alt={brand.name} class="h-8 w-auto sm:h-9" width="370" height="100" />
         </a>
 
         <nav class="flex items-center gap-5 text-sm sm:gap-7" aria-label="Main">
-          <a href="#services" class="hidden text-muted transition hover:text-ink sm:inline">{t.nav.services}</a>
-          <a href="#work" class="hidden text-muted transition hover:text-ink sm:inline">{t.nav.work}</a>
-          <a href="#approach" class="hidden text-muted transition hover:text-ink md:inline">{t.nav.approach}</a>
-          <a href="#contact" class="text-ink transition hover:text-accent-strong">{t.nav.contact}</a>
+          <a href="#services" class="hidden -my-3 py-3 text-muted transition hover:text-ink sm:inline-flex sm:items-center">{t.nav.services}</a>
+          <a href="#work" class="hidden -my-3 py-3 text-muted transition hover:text-ink sm:inline-flex sm:items-center">{t.nav.work}</a>
+          <a href="#approach" class="hidden -my-3 py-3 text-muted transition hover:text-ink md:inline-flex md:items-center">{t.nav.approach}</a>
+          <a href="#contact" class="-my-3 inline-flex items-center py-3 text-ink transition hover:text-accent-strong">{t.nav.contact}</a>
           <a
             href={t.nav.langHref}
-            class="border-l border-rule pl-5 text-xs tracking-[0.14em] text-muted uppercase transition hover:text-accent-strong"
+            class="-my-3 inline-flex min-h-11 items-center border-l border-rule py-3 pl-5 text-xs tracking-[0.14em] text-muted uppercase transition hover:text-accent-strong"
             hreflang={locale === 'es' ? 'en' : 'es'}
           >
             {t.nav.langLabel}
