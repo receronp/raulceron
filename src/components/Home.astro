@@ -1,0 +1,156 @@
+---
+import { content, type Locale } from '../i18n/content';
+import { brand } from '../brand/brand';
+import SectionHead from './SectionHead.astro';
+import Frame from './Frame.astro';
+import Tag from './Tag.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = content[locale];
+---
+
+<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+<section class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+    <div class="flex items-center gap-3">
+      <Frame class="h-4 w-4 text-ink" />
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+    </div>
+
+    <h1 class="mt-8 max-w-3xl text-4xl leading-[1.08] font-medium tracking-tight text-balance text-ink sm:text-5xl md:text-6xl">
+      {t.hero.title}
+    </h1>
+
+    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
+      {t.hero.lede}
+    </p>
+
+    <p class="mt-5 text-sm text-muted">{t.hero.note}</p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href="#contact"
+        class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent"
+      >
+        {t.hero.cta}
+      </a>
+      <a
+        href="#services"
+        class="border border-rule px-6 py-3 text-sm text-ink transition hover:border-ink"
+      >
+        {t.hero.ctaSecondary}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ─────────────────────────────────────────────────────────── -->
+<section id="services" class="scroll-mt-20 border-b border-rule">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <SectionHead eyebrow={t.services.eyebrow} title={t.services.title} lede={t.services.lede} />
+
+    <div class="mt-14 grid gap-px overflow-hidden border border-rule bg-rule sm:grid-cols-2">
+      {t.services.items.map((s) => (
+        <article class="flex flex-col gap-4 bg-paper p-7 sm:p-8">
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-xs tracking-widest text-accent-strong">{s.n}</span>
+            <h3 class="text-lg font-medium text-ink">{s.title}</h3>
+          </div>
+          <p class="text-sm leading-relaxed text-pretty text-muted">{s.body}</p>
+          <div class="mt-auto flex flex-wrap gap-1.5 pt-2">
+            {s.tags.map((tag) => <Tag label={tag} />)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── Work ─────────────────────────────────────────────────────────────── -->
+<section id="work" class="scroll-mt-20 border-b border-rule">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <SectionHead eyebrow={t.work.eyebrow} title={t.work.title} lede={t.work.lede} />
+
+    <div class="mt-14 flex flex-col">
+      {t.work.items.map((w, i) => (
+        <article class:list={['grid gap-6 py-9 md:grid-cols-[1fr_2fr] md:gap-12', i > 0 && 'border-t border-rule']}>
+          <div>
+            <h3 class="text-lg leading-snug font-medium text-ink">{w.title}</h3>
+            <p class="mt-2 text-xs tracking-[0.14em] text-accent-strong uppercase">{w.region}</p>
+          </div>
+          <div>
+            <p class="text-sm leading-relaxed text-pretty text-muted">{w.body}</p>
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              {w.stack.map((s) => <Tag label={s} />)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── Approach ─────────────────────────────────────────────────────────── -->
+<section id="approach" class="scroll-mt-20 border-b border-rule">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <SectionHead eyebrow={t.approach.eyebrow} title={t.approach.title} />
+
+    <div class="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+      {t.approach.items.map((a, i) => (
+        <div class="flex flex-col gap-3">
+          <div class="h-px w-10 bg-accent" />
+          <h3 class="text-base font-medium text-ink">{a.title}</h3>
+          <p class="text-sm leading-relaxed text-pretty text-muted">{a.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── About ────────────────────────────────────────────────────────────── -->
+<section class="border-b border-rule">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <div class="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+      <SectionHead eyebrow={t.about.eyebrow} title={t.about.title} />
+      <div class="flex flex-col gap-5">
+        {t.about.body.map((p) => (
+          <p class="text-base leading-relaxed text-pretty text-ink-soft">{p}</p>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ──────────────────────────────────────────────────────────── -->
+<section id="contact" class="scroll-mt-20 bg-ink text-paper">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+    <div class="flex items-center gap-3">
+      <Frame class="h-4 w-4 text-paper" />
+      <span class="eyebrow" style="color: #a9a29a">{t.contact.eyebrow}</span>
+    </div>
+
+    <h2 class="mt-8 max-w-2xl text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl">
+      {t.contact.title}
+    </h2>
+
+    <p class="mt-5 max-w-xl text-base leading-relaxed text-pretty" style="color: #c6bfb6">
+      {t.contact.body}
+    </p>
+
+    <a
+      href={`mailto:${brand.email}`}
+      class="mt-10 inline-block border-b-2 border-accent pb-1 text-2xl font-medium transition hover:text-accent sm:text-3xl"
+    >
+      {t.contact.cta}
+    </a>
+
+    <div class="mt-14 flex flex-col gap-3 border-t pt-8 text-sm sm:flex-row sm:items-center sm:justify-between" style="border-color: #3a3531; color: #a9a29a">
+      <span class="flex items-center gap-2.5">
+        <span class="inline-block h-1.5 w-1.5 rounded-full" style="background: var(--brand-accent)"></span>
+        {t.contact.availability}
+      </span>
+      <span>{t.contact.billing}</span>
+    </div>
+  </div>
+</section>

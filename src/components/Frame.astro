@@ -1,0 +1,19 @@
+---
+/**
+ * The corner-bracket motif from the identity, reused as a section marker.
+ * Decorative only — hidden from assistive tech.
+ */
+interface Props { class?: string }
+const { class: klass = '' } = Astro.props;
+---
+<svg
+  viewBox="0 0 100 100"
+  fill="none"
+  aria-hidden="true"
+  class={`shrink-0 ${klass}`}
+>
+  <path d="M 68 6 H 94 V 32" stroke="currentColor" stroke-width="7" />
+  <path d="M 94 68 V 94 H 68" stroke="currentColor" stroke-width="7" />
+  <path d="M 32 94 H 6 V 68" stroke="currentColor" stroke-width="7" />
+  <path d="M 6 32 V 6 H 32" stroke="var(--brand-accent)" stroke-width="7" />
+</svg>

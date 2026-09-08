@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Brand tokens.
+
+   The accent is the ONLY colour that differs between the personal mark
+   (Raúl Cerón, ochre) and the company mark (NOREC, petrol). It is set as
+   --brand-accent by Base.astro from src/brand/brand.ts, so switching brands
+   is a one-line change in that file, not a redesign.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --brand-accent: #b0663a;        /* overridden at runtime by brand.ts */
+  --brand-accent-strong: #8c4e2b;
+}
+
+@theme {
+  --color-ink: #1b1815;           /* warm near-black, never pure black */
+  --color-ink-soft: #4a453f;
+  --color-paper: #faf8f4;         /* warm off-white */
+  --color-paper-pure: #ffffff;
+  --color-muted: #6e6862;
+  --color-faint: #a69e94;
+  --color-rule: #e2dcd3;
+  --color-rule-soft: #ede8e1;
+
+  --color-accent: var(--brand-accent);
+  --color-accent-strong: var(--brand-accent-strong);
+
+  --font-sans: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The tracked-caps treatment carried over from the identity. */
+.eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.wordmark {
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

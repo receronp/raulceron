@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import { brand } from '../brand/brand';
+import { content, type Locale } from '../i18n/content';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = content[locale];
+const year = new Date().getFullYear();
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site).href} />
+    <link rel="alternate" hreflang="es" href={new URL('/es/', Astro.site).href} />
+    <link rel="icon" type="image/svg+xml" href={brand.favicon} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_US'} />
+    <meta name="theme-color" content="#faf8f4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+    />
+    <style define:vars={{ accent: brand.accent, accentStrong: brand.accentStrong }}>
+      :root {
+        --brand-accent: var(--accent);
+        --brand-accent-strong: var(--accentStrong);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+    >
+      {locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}
+    </a>
+
+    <header class="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur">
+      <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-4">
+        <a href={locale === 'es' ? '/es/' : '/'} class="flex items-center" aria-label={brand.name}>
+          <img src={brand.logo} alt={brand.name} class="h-8 w-auto sm:h-9" width="370" height="100" />
+        </a>
+
+        <nav class="flex items-center gap-5 text-sm sm:gap-7" aria-label="Main">
+          <a href="#services" class="hidden text-muted transition hover:text-ink sm:inline">{t.nav.services}</a>
+          <a href="#work" class="hidden text-muted transition hover:text-ink sm:inline">{t.nav.work}</a>
+          <a href="#approach" class="hidden text-muted transition hover:text-ink md:inline">{t.nav.approach}</a>
+          <a href="#contact" class="text-ink transition hover:text-accent-strong">{t.nav.contact}</a>
+          <a
+            href={t.nav.langHref}
+            class="border-l border-rule pl-5 text-xs tracking-[0.14em] text-muted uppercase transition hover:text-accent-strong"
+            hreflang={locale === 'es' ? 'en' : 'es'}
+          >
+            {t.nav.langLabel}
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><slot /></main>
+
+    <footer class="border-t border-rule bg-paper">
+      <div class="mx-auto max-w-5xl px-6 py-12">
+        <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+          <div class="flex flex-col gap-4">
+            <img src={brand.mark} alt="" aria-hidden="true" class="h-9 w-9" width="100" height="100" />
+            <p class="text-xs leading-relaxed text-muted">
+              <span class="block font-medium text-ink-soft">{t.footer.identity}</span>
+              {brand.legalName}<br />
+              NIF {brand.nif}<br />
+              Madrid, España<br />
+              <a href={`mailto:${brand.email}`} class="text-accent-strong hover:text-ink">{brand.email}</a>
+            </p>
+          </div>
+
+          <div class="text-xs text-muted sm:text-right">
+            <p>© {year} {brand.name}. {t.footer.rights}</p>
+            <p class="mt-2">
+              <a href={t.nav.langHref} class="hover:text-ink">{t.nav.langLabel}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
