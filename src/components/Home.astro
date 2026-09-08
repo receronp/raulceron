@@ -11,7 +11,7 @@ const t = content[locale];
 ---
 
 <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
-<section class="border-b border-rule">
+<section class="border-b border-rule-accent">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
     <div class="flex items-center gap-3">
       <Frame class="h-4 w-4 text-ink" />
@@ -31,13 +31,13 @@ const t = content[locale];
     <div class="mt-10 flex flex-wrap items-center gap-4">
       <a
         href="#contact"
-        class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent"
+        class="bg-accent-strong px-6 py-3 text-sm font-medium text-paper transition hover:bg-ink"
       >
         {t.hero.cta}
       </a>
       <a
         href="#services"
-        class="border border-rule px-6 py-3 text-sm text-ink transition hover:border-ink"
+        class="border border-rule-accent px-6 py-3 text-sm text-ink transition hover:border-accent-strong hover:text-accent-strong"
       >
         {t.hero.ctaSecondary}
       </a>
@@ -46,11 +46,11 @@ const t = content[locale];
 </section>
 
 <!-- ── Services ─────────────────────────────────────────────────────────── -->
-<section id="services" class="scroll-mt-20 border-b border-rule">
+<section id="services" class="scroll-mt-20 border-b border-rule-accent bg-wash">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
     <SectionHead eyebrow={t.services.eyebrow} title={t.services.title} lede={t.services.lede} />
 
-    <div class="mt-14 grid gap-px overflow-hidden border border-rule bg-rule sm:grid-cols-2">
+    <div class="mt-14 grid gap-px overflow-hidden border border-rule-accent bg-rule-accent sm:grid-cols-2">
       {t.services.items.map((s) => (
         <article class="flex flex-col gap-4 bg-paper p-7 sm:p-8">
           <div class="flex items-baseline gap-3">
@@ -68,13 +68,13 @@ const t = content[locale];
 </section>
 
 <!-- ── Work ─────────────────────────────────────────────────────────────── -->
-<section id="work" class="scroll-mt-20 border-b border-rule">
+<section id="work" class="scroll-mt-20 border-b border-rule-accent">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
     <SectionHead eyebrow={t.work.eyebrow} title={t.work.title} lede={t.work.lede} />
 
     <div class="mt-14 flex flex-col">
       {t.work.items.map((w, i) => (
-        <article class:list={['grid gap-6 py-9 md:grid-cols-[1fr_2fr] md:gap-12', i > 0 && 'border-t border-rule']}>
+        <article class:list={['grid gap-6 py-9 md:grid-cols-[1fr_2fr] md:gap-12', i > 0 && 'border-t border-rule-accent']}>
           <div>
             <h3 class="text-lg leading-snug font-medium text-ink">{w.title}</h3>
             <p class="mt-2 text-xs tracking-[0.14em] text-accent-strong uppercase">{w.region}</p>
@@ -92,14 +92,14 @@ const t = content[locale];
 </section>
 
 <!-- ── Approach ─────────────────────────────────────────────────────────── -->
-<section id="approach" class="scroll-mt-20 border-b border-rule">
+<section id="approach" class="scroll-mt-20 border-b border-rule-accent bg-wash">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
     <SectionHead eyebrow={t.approach.eyebrow} title={t.approach.title} />
 
     <div class="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
       {t.approach.items.map((a, i) => (
         <div class="flex flex-col gap-3">
-          <div class="h-px w-10 bg-accent" />
+          <div class="h-1 w-12 bg-accent" />
           <h3 class="text-base font-medium text-ink">{a.title}</h3>
           <p class="text-sm leading-relaxed text-pretty text-muted">{a.body}</p>
         </div>
@@ -109,7 +109,7 @@ const t = content[locale];
 </section>
 
 <!-- ── About ────────────────────────────────────────────────────────────── -->
-<section class="border-b border-rule">
+<section class="border-b border-rule-accent">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
     <div class="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
       <SectionHead eyebrow={t.about.eyebrow} title={t.about.title} />

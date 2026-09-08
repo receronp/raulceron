@@ -12,6 +12,22 @@
 :root {
   --brand-accent: #b0663a;        /* overridden at runtime by brand.ts */
   --brand-accent-strong: #8c4e2b;
+
+  /* Neutral fallbacks: without color-mix the tints collapse to plain paper and
+     rule, i.e. the monochrome layout, rather than to a solid block of accent. */
+  --brand-wash: #faf8f4;
+  --brand-chip: #ffffff;
+  --brand-rule-accent: #e2dcd3;
+}
+
+/* Tints mixed from the accent rather than hard-coded, so the NOREC switch
+   recolours the section bands, chips and rules along with everything else. */
+@supports (color: color-mix(in oklab, red, red)) {
+  :root {
+    --brand-wash: color-mix(in oklab, var(--brand-accent) 6%, #faf8f4);
+    --brand-chip: color-mix(in oklab, var(--brand-accent) 11%, #faf8f4);
+    --brand-rule-accent: color-mix(in oklab, var(--brand-accent) 30%, #e2dcd3);
+  }
 }
 
 @theme {
@@ -26,6 +42,9 @@
 
   --color-accent: var(--brand-accent);
   --color-accent-strong: var(--brand-accent-strong);
+  --color-wash: var(--brand-wash);
+  --color-chip: var(--brand-chip);
+  --color-rule-accent: var(--brand-rule-accent);
 
   --font-sans: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
@@ -43,13 +62,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* The tracked-caps treatment carried over from the identity. */
+/* The tracked-caps treatment carried over from the identity. Set in
+   accent-strong (6.11:1 on paper) — it is under 18.66px, so never plain accent. */
 .eyebrow {
   font-size: 0.6875rem;
   letter-spacing: 0.22em;
   text-indent: 0.22em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--brand-accent-strong);
 }
 
 .wordmark {
