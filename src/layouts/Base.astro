@@ -81,6 +81,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
               <span class="block font-medium text-ink-soft">{t.footer.identity}</span>
               {brand.legalName}<br />
               NIF {brand.nif}<br />
+              {brand.venue}<br />
               {brand.address}<br />
               {brand.postcode} {brand.city}, {brand.country}<br />
               <a href={`mailto:${brand.email}`} class="text-accent-strong hover:text-ink">{brand.email}</a>
