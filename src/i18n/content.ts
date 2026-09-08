@@ -17,7 +17,7 @@ export const content = {
     meta: {
       title: 'Raúl Cerón — Backend engineering and digital consulting',
       description:
-        'Freelance backend engineer in Madrid. ERP and Odoo development, headless commerce, API integrations, PostgreSQL and vector search, cloud architecture on OCI, AWS and GCP.',
+        'Freelance backend engineer in Zaragoza. ERP and Odoo development, headless commerce, API integrations, PostgreSQL and vector search, cloud architecture on OCI, AWS and GCP.',
     },
     nav: {
       services: 'Services',
@@ -32,7 +32,7 @@ export const content = {
       title: 'Backend engineering, delivered end to end.',
       lede:
         'I design and build the systems businesses actually run on — ERP customisation, commerce platforms, integrations and data infrastructure — and carry them through to the web and mobile apps people use every day.',
-      note: 'Based in Madrid. Working with clients in Spain, Mexico and the United States.',
+      note: 'Based in Zaragoza. Working with clients in Spain, Mexico and the United States.',
       cta: 'Start a conversation',
       ctaSecondary: 'See what I do',
     },
@@ -147,7 +147,7 @@ export const content = {
       eyebrow: 'About',
       title: 'Who you would be working with',
       body: [
-        'I am a backend engineer working independently from Madrid, with clients across Spain, Mexico and the United States. Most of my work is with established businesses that have a system doing something important and need it extended, replaced or connected to something else.',
+        'I am a backend engineer working independently from Zaragoza, with clients across Spain, Mexico and the United States. Most of my work is with established businesses that have a system doing something important and need it extended, replaced or connected to something else.',
         'That means I spend more time on data models, integration boundaries and deployment than on greenfield product design. When a project does need a front end — an admin panel, a storefront, a mobile app — assisted tooling lets me take it there myself rather than handing off half a system.',
       ],
     },
@@ -172,7 +172,7 @@ export const content = {
     meta: {
       title: 'Raúl Cerón — Desarrollo backend y consultoría digital',
       description:
-        'Ingeniero backend freelance en Madrid. Desarrollo de módulos Odoo y ERP, comercio headless, integración de APIs, PostgreSQL y búsqueda vectorial, arquitectura cloud en OCI, AWS y GCP.',
+        'Ingeniero backend freelance en Zaragoza. Desarrollo de módulos Odoo y ERP, comercio headless, integración de APIs, PostgreSQL y búsqueda vectorial, arquitectura cloud en OCI, AWS y GCP.',
     },
     nav: {
       services: 'Servicios',
@@ -187,7 +187,7 @@ export const content = {
       title: 'Ingeniería backend, de principio a fin.',
       lede:
         'Diseño y construyo los sistemas sobre los que opera una empresa — personalización de ERP, plataformas de comercio, integraciones e infraestructura de datos — y los llevo hasta las aplicaciones web y móviles que la gente usa cada día.',
-      note: 'Con base en Madrid. Trabajo con clientes en España, México y Estados Unidos.',
+      note: 'Con base en Zaragoza. Trabajo con clientes en España, México y Estados Unidos.',
       cta: 'Hablemos',
       ctaSecondary: 'Ver qué hago',
     },
@@ -301,7 +301,7 @@ export const content = {
       eyebrow: 'Sobre mí',
       title: 'Con quién trabajarías',
       body: [
-        'Soy ingeniero backend y trabajo de forma independiente desde Madrid, con clientes en España, México y Estados Unidos. La mayor parte de mi trabajo es con empresas ya establecidas que tienen un sistema haciendo algo importante y necesitan ampliarlo, sustituirlo o conectarlo con otra cosa.',
+        'Soy ingeniero backend y trabajo de forma independiente desde Zaragoza, con clientes en España, México y Estados Unidos. La mayor parte de mi trabajo es con empresas ya establecidas que tienen un sistema haciendo algo importante y necesitan ampliarlo, sustituirlo o conectarlo con otra cosa.',
         'Eso significa que dedico más tiempo a modelos de datos, límites de integración y despliegue que al diseño de producto desde cero. Cuando un proyecto necesita front —un panel de administración, una tienda, una app móvil—, las herramientas asistidas me permiten llevarlo yo mismo en lugar de entregar medio sistema.',
       ],
     },
