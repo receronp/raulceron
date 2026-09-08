@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.raulceron.es/sitemap-index.xml
