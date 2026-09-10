@@ -42,9 +42,9 @@ export const content = {
   en: {
     htmlLang: 'en',
     meta: {
-      title: 'Raúl Cerón — Backend engineering and digital consulting',
+      title: 'Raúl Cerón — Software engineering, end to end',
       description:
-        'Freelance backend engineer and CKA-certified cloud architect in Zaragoza. ERP and Odoo development, headless commerce, API integrations, PostgreSQL and vector search, Kubernetes and cloud architecture on OCI, AWS and GCP.',
+        'Freelance engineer in Zaragoza taking projects from requirements to production. Backend and cloud architecture (CKA), Odoo and ERP, headless commerce, API integrations, PostgreSQL and vector search.',
     },
     nav: {
       services: 'Services',
@@ -57,9 +57,9 @@ export const content = {
     },
     hero: {
       eyebrow: 'Digital development & consulting',
-      title: 'Backend engineering, delivered end to end.',
+      title: 'From the first conversation to production.',
       lede:
-        'I design and build the systems businesses actually run on — ERP customisation, commerce platforms, integrations and data infrastructure — and carry them through to the web and mobile apps people use every day.',
+        'You explain the problem to the engineer who will build it. I take the requirements first-hand, then design, build and deploy the system — ERP, commerce, integrations, data infrastructure and the apps on top. Backend and cloud are where I go deepest.',
       note: 'Based in Zaragoza. Certified Kubernetes Administrator. Working with clients in Spain, Mexico and the United States.',
       cta: 'Start a conversation',
       ctaSecondary: 'See what I do',
@@ -159,12 +159,12 @@ export const content = {
       roles: [
         {
           org: 'self',
-          role: 'Independent backend engineer',
+          role: 'Software engineer',
           company: 'Freelance',
           place: 'Zaragoza, Spain',
           dates: 'Oct 2025 – present',
           body:
-            'End-to-end backend systems for clients in North America and Europe, including LLM and agentic workflows that automate business processes. The projects above come from this period.',
+            'End-to-end delivery for clients in North America and Europe, from gathering requirements with them through design, build and deployment — including LLM and agentic workflows that automate business processes. The projects above come from this period.',
           tags: ['Python', 'PostgreSQL', 'LLM agents', 'OpenTofu'],
         },
         {
@@ -244,8 +244,13 @@ export const content = {
     },
     approach: {
       eyebrow: 'How I work',
-      title: 'Three things that do not change',
+      title: 'Four things that do not change',
       items: [
+        {
+          title: 'You talk to the engineer',
+          body:
+            'Requirements come to me first-hand, not through an account manager. The person asking the awkward questions in the first meeting is the one who writes the code and answers for it in production.',
+        },
         {
           title: 'Backend first',
           body:
@@ -267,7 +272,7 @@ export const content = {
       eyebrow: 'About',
       title: 'Who you would be working with',
       body: [
-        'I am a backend engineer working independently from Zaragoza, with clients across Spain, Mexico and the United States. Most of my work is with established businesses that have a system doing something important and need it extended, replaced or connected to something else.',
+        'I take software projects from the first requirements conversation to production, working independently from Zaragoza with clients across Spain, Mexico and the United States. Most are established businesses with a system doing something important that needs extending, replacing or connecting to something else.',
         'That means I spend more time on data models, integration boundaries and deployment than on greenfield product design. When a project does need a front end — an admin panel, a storefront, a mobile app — assisted tooling lets me take it there myself rather than handing off half a system.',
         'Before going independent I spent over two years at Tata Consultancy Services running CI/CD pipelines and Kubernetes workloads on Google Cloud. Before that came an engineering degree focused on automotive embedded technology, with internships in automotive R&D and at Porsche Engineering.',
       ],
@@ -312,9 +317,9 @@ export const content = {
   es: {
     htmlLang: 'es',
     meta: {
-      title: 'Raúl Cerón — Desarrollo backend y consultoría digital',
+      title: 'Raúl Cerón — Ingeniería de software de principio a fin',
       description:
-        'Ingeniero backend freelance y arquitecto cloud con certificación CKA en Zaragoza. Desarrollo de módulos Odoo y ERP, comercio headless, integración de APIs, PostgreSQL y búsqueda vectorial, Kubernetes y arquitectura cloud en OCI, AWS y GCP.',
+        'Ingeniero freelance en Zaragoza que lleva los proyectos de los requisitos a producción. Arquitectura backend y cloud (CKA), Odoo y ERP, comercio headless, integración de APIs, PostgreSQL y búsqueda vectorial.',
     },
     nav: {
       services: 'Servicios',
@@ -327,9 +332,9 @@ export const content = {
     },
     hero: {
       eyebrow: 'Desarrollo y consultoría digital',
-      title: 'Ingeniería backend, de principio a fin.',
+      title: 'De la primera conversación a producción.',
       lede:
-        'Diseño y construyo los sistemas sobre los que opera una empresa — personalización de ERP, plataformas de comercio, integraciones e infraestructura de datos — y los llevo hasta las aplicaciones web y móviles que la gente usa cada día.',
+        'Le cuentas el problema al ingeniero que lo va a construir. Recojo los requisitos de primera mano y después diseño, desarrollo y despliego el sistema: ERP, comercio, integraciones, infraestructura de datos y las aplicaciones que van encima. El backend y el cloud son mi especialidad.',
       note: 'Con base en Zaragoza. Administrador de Kubernetes certificado (CKA). Trabajo con clientes en España, México y Estados Unidos.',
       cta: 'Hablemos',
       ctaSecondary: 'Ver qué hago',
@@ -428,12 +433,12 @@ export const content = {
       roles: [
         {
           org: 'self',
-          role: 'Ingeniero backend independiente',
+          role: 'Ingeniero de software',
           company: 'Autónomo',
           place: 'Zaragoza, España',
           dates: 'oct. 2025 – actualidad',
           body:
-            'Sistemas backend de principio a fin para clientes de Norteamérica y Europa, incluidos flujos con LLM y agentes que automatizan procesos de negocio. Los proyectos de arriba son de esta etapa.',
+            'Proyectos completos para clientes de Norteamérica y Europa, desde la toma de requisitos con ellos hasta el diseño, el desarrollo y el despliegue, incluidos flujos con LLM y agentes que automatizan procesos de negocio. Los proyectos de arriba son de esta etapa.',
           tags: ['Python', 'PostgreSQL', 'Agentes LLM', 'OpenTofu'],
         },
         {
@@ -513,8 +518,13 @@ export const content = {
     },
     approach: {
       eyebrow: 'Método',
-      title: 'Tres cosas que no cambian',
+      title: 'Cuatro cosas que no cambian',
       items: [
+        {
+          title: 'Hablas con quien lo construye',
+          body:
+            'Los requisitos me llegan de primera mano, no a través de un gestor de cuentas. Quien hace las preguntas incómodas en la primera reunión es quien escribe el código y responde de él en producción.',
+        },
         {
           title: 'El backend primero',
           body:
@@ -536,7 +546,7 @@ export const content = {
       eyebrow: 'Sobre mí',
       title: 'Con quién trabajarías',
       body: [
-        'Soy ingeniero backend y trabajo de forma independiente desde Zaragoza, con clientes en España, México y Estados Unidos. La mayor parte de mi trabajo es con empresas ya establecidas que tienen un sistema haciendo algo importante y necesitan ampliarlo, sustituirlo o conectarlo con otra cosa.',
+        'Llevo proyectos de software desde la primera conversación sobre requisitos hasta producción, de forma independiente desde Zaragoza y con clientes en España, México y Estados Unidos. La mayoría son empresas ya establecidas con un sistema que hace algo importante y que necesitan ampliar, sustituir o conectar con otra cosa.',
         'Eso significa que dedico más tiempo a modelos de datos, límites de integración y despliegue que al diseño de producto desde cero. Cuando un proyecto necesita front —un panel de administración, una tienda, una app móvil—, las herramientas asistidas me permiten llevarlo yo mismo en lugar de entregar medio sistema.',
         'Antes de establecerme por mi cuenta pasé más de dos años en Tata Consultancy Services gestionando pipelines de CI/CD y cargas de Kubernetes en Google Cloud. Antes de eso, una ingeniería centrada en tecnología embebida para automoción, con prácticas en I+D de automoción y en Porsche Engineering.',
       ],
