@@ -120,22 +120,17 @@ const t = content[locale];
       ))}
     </ol>
 
-    <h3 class="eyebrow mt-16">{t.experience.educationLabel}</h3>
-    <ol class="mt-4 grid gap-px overflow-hidden border border-rule-accent bg-rule-accent sm:grid-cols-2">
-      {t.experience.education.map((e) => (
-        <li class="org-row flex flex-col gap-4 bg-paper p-6 sm:p-7">
-          <div class="flex h-10 items-center"><Logo org={e.org} /></div>
-          <div>
-            <h4 class="text-base leading-snug font-medium text-ink">{e.degree}</h4>
-            <p class="mt-1 text-sm text-ink-soft">{orgs[e.org].name}</p>
-            <p class="mt-2 text-xs text-muted">
-              {e.place} · <span class="tabular-nums">{e.dates}</span>
-            </p>
-            {e.note && <p class="mt-2 text-xs leading-relaxed text-muted">{e.note}</p>}
-          </div>
-        </li>
-      ))}
-    </ol>
+    <div class="grid gap-x-10 gap-y-2 py-8 md:grid-cols-[10rem_1fr_7rem]">
+      <h3 class="eyebrow md:pt-0.5">{t.experience.educationLabel}</h3>
+      <ul class="space-y-1.5 text-sm leading-relaxed text-muted">
+        {t.experience.education.map((e) => (
+          <li>
+            <span class="font-medium text-ink">{e.degree}</span> · {e.school},
+            <span class="tabular-nums">{e.year}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 </section>
 

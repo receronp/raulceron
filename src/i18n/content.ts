@@ -15,7 +15,7 @@ export const locales = ['en', 'es'] as const;
 export type Locale = (typeof locales)[number];
 
 /**
- * Employers, schools and certifying bodies from the CV and LinkedIn profile.
+ * Employers and certifying bodies from the CV and LinkedIn profile.
  * These are employment and education history, not clients, so naming them is
  * fine; freelance clients stay anonymous (see the grounding rule above).
  *
@@ -24,7 +24,7 @@ export type Locale = (typeof locales)[number];
  * visual weight: wide wordmarks sit shorter, solid square marks smaller.
  *
  * Sources: Simple Icons (CC0) for TCS, AWS, Google Cloud, Linux Foundation;
- * upv.es for UPV; xpertal.com for Xpertal; Wikimedia Commons for the rest.
+ * xpertal.com for Xpertal; Wikimedia Commons for Porsche and Yazaki.
  */
 export const orgs = {
   self: { name: 'Raúl Cerón', logo: '', aspect: 1, h: 28 },
@@ -32,10 +32,6 @@ export const orgs = {
   xpertal: { name: 'Xpertal Global Services', logo: '/logos/xpertal.png', aspect: 1.994, h: 34 },
   porsche: { name: 'Porsche Engineering', logo: '/logos/porsche.svg', aspect: 15, h: 10 },
   yazaki: { name: 'Yazaki North America', logo: '/logos/yazaki.svg', aspect: 6.386, h: 14 },
-  upv: { name: 'Universitat Politècnica de València', logo: '/logos/upv.svg', aspect: 3.154, h: 36 },
-  tec: { name: 'Tecnológico de Monterrey', logo: '/logos/tec.svg', aspect: 1, h: 36 },
-  rub: { name: 'Ruhr-Universität Bochum', logo: '/logos/rub.svg', aspect: 1, h: 30 },
-  waterloo: { name: 'University of Waterloo', logo: '/logos/waterloo.svg', aspect: 4.689, h: 26 },
   linuxfoundation: { name: 'The Linux Foundation', logo: '/logos/linuxfoundation.svg', aspect: 1, h: 20 },
   aws: { name: 'Amazon Web Services', logo: '/logos/aws.svg', aspect: 1.672, h: 18 },
   googlecloud: { name: 'Google Cloud', logo: '/logos/googlecloud.svg', aspect: 1.247, h: 20 },
@@ -158,7 +154,7 @@ export const content = {
       eyebrow: 'Experience',
       title: 'Where the experience comes from',
       lede:
-        'Automotive R&D, enterprise cloud engineering and now an independent practice, across four countries.',
+        'Automotive R&D, enterprise cloud engineering and now an independent practice, in Mexico, Germany and Spain.',
       rolesLabel: 'Employment',
       roles: [
         {
@@ -214,34 +210,8 @@ export const content = {
       ],
       educationLabel: 'Education',
       education: [
-        {
-          org: 'upv',
-          degree: 'MSc Computer and Network Engineering',
-          place: 'Valencia, Spain',
-          dates: '2024 – 2025',
-          note: 'Scholarship holder, Ibero-American Postgraduate University Association (AUIP)',
-        },
-        {
-          org: 'tec',
-          degree: 'BSc Digital Systems and Robotics Engineering',
-          place: 'Monterrey, Mexico',
-          dates: '2017 – 2022',
-          note: 'Focus on automotive embedded technology',
-        },
-        {
-          org: 'rub',
-          degree: 'Computer Engineering, exchange',
-          place: 'Bochum, Germany',
-          dates: '2020 – 2021',
-          note: '',
-        },
-        {
-          org: 'waterloo',
-          degree: 'Mechatronics Engineering, first year',
-          place: 'Waterloo, Canada',
-          dates: '2016 – 2017',
-          note: '',
-        },
+        { degree: 'MSc Computer and Network Engineering', school: 'Universitat Politècnica de València', year: '2025' },
+        { degree: 'BSc Digital Systems and Robotics Engineering', school: 'Tec de Monterrey', year: '2022' },
       ],
     },
     credentials: {
@@ -453,7 +423,7 @@ export const content = {
       eyebrow: 'Trayectoria',
       title: 'De dónde viene la experiencia',
       lede:
-        'I+D en automoción, ingeniería cloud en una gran consultora y ahora una práctica independiente, en cuatro países.',
+        'I+D en automoción, ingeniería cloud en una gran consultora y ahora una práctica independiente, en México, Alemania y España.',
       rolesLabel: 'Experiencia profesional',
       roles: [
         {
@@ -509,34 +479,8 @@ export const content = {
       ],
       educationLabel: 'Formación',
       education: [
-        {
-          org: 'upv',
-          degree: 'Máster en Ingeniería de Computadores y Redes',
-          place: 'Valencia, España',
-          dates: '2024 – 2025',
-          note: 'Becario de la Asociación Universitaria Iberoamericana de Postgrado (AUIP)',
-        },
-        {
-          org: 'tec',
-          degree: 'Ingeniería en Sistemas Digitales y Robótica',
-          place: 'Monterrey, México',
-          dates: '2017 – 2022',
-          note: 'Especialización en tecnología embebida para automoción',
-        },
-        {
-          org: 'rub',
-          degree: 'Ingeniería de Computadores, intercambio',
-          place: 'Bochum, Alemania',
-          dates: '2020 – 2021',
-          note: '',
-        },
-        {
-          org: 'waterloo',
-          degree: 'Ingeniería Mecatrónica, primer curso',
-          place: 'Waterloo, Canadá',
-          dates: '2016 – 2017',
-          note: '',
-        },
+        { degree: 'Máster en Ingeniería de Computadores y Redes', school: 'Universitat Politècnica de València', year: '2025' },
+        { degree: 'Ingeniería en Sistemas Digitales y Robótica', school: 'Tec de Monterrey', year: '2022' },
       ],
     },
     credentials: {
