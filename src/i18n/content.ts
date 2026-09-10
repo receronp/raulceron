@@ -173,7 +173,7 @@ export const content = {
         },
         {
           org: 'tcs',
-          role: 'Assistant Systems Engineer',
+          role: 'Associate Systems Engineer',
           company: 'Tata Consultancy Services',
           place: 'Monterrey, Mexico',
           dates: 'Apr 2022 – Jul 2024',
@@ -230,7 +230,7 @@ export const content = {
         },
         {
           org: 'rub',
-          degree: 'Computer Engineering, study abroad',
+          degree: 'Computer Engineering, exchange',
           place: 'Bochum, Germany',
           dates: '2020 – 2021',
           note: '',
@@ -468,7 +468,7 @@ export const content = {
         },
         {
           org: 'tcs',
-          role: 'Assistant Systems Engineer',
+          role: 'Associate Systems Engineer',
           company: 'Tata Consultancy Services',
           place: 'Monterrey, México',
           dates: 'abr. 2022 – jul. 2024',
@@ -525,7 +525,7 @@ export const content = {
         },
         {
           org: 'rub',
-          degree: 'Ingeniería de Computadores, estancia internacional',
+          degree: 'Ingeniería de Computadores, intercambio',
           place: 'Bochum, Alemania',
           dates: '2020 – 2021',
           note: '',
