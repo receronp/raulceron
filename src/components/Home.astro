@@ -1,9 +1,10 @@
 ---
-import { content, type Locale } from '../i18n/content';
+import { content, orgs, type Locale } from '../i18n/content';
 import { brand } from '../brand/brand';
 import SectionHead from './SectionHead.astro';
 import Frame from './Frame.astro';
 import Tag from './Tag.astro';
+import Logo from './Logo.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -91,6 +92,103 @@ const t = content[locale];
   </div>
 </section>
 
+<!-- ── Experience ───────────────────────────────────────────────────────── -->
+<section id="experience" class="scroll-mt-20 border-b border-rule-accent bg-wash">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <SectionHead eyebrow={t.experience.eyebrow} title={t.experience.title} lede={t.experience.lede} />
+
+    <h3 class="eyebrow mt-14">{t.experience.rolesLabel}</h3>
+    <ol class="mt-4 border-t border-rule-accent">
+      {t.experience.roles.map((r) => (
+        <li class="org-row grid gap-x-10 gap-y-3 border-b border-rule-accent py-8 md:grid-cols-[10rem_1fr_7rem]">
+          <div class="flex items-start max-md:order-first md:order-last md:justify-end md:pt-1">
+            <Logo org={r.org} />
+          </div>
+          <div class="text-xs leading-relaxed md:order-first">
+            <p class="tracking-[0.08em] text-accent-strong uppercase tabular-nums">{r.dates}</p>
+            <p class="mt-1 text-muted">{r.place}</p>
+          </div>
+          <div>
+            <h4 class="text-lg leading-snug font-medium text-ink">{r.role}</h4>
+            <p class="mt-0.5 text-sm text-ink-soft">{r.company}</p>
+            <p class="mt-3 text-sm leading-relaxed text-pretty text-muted">{r.body}</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              {r.tags.map((tag) => <Tag label={tag} />)}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <h3 class="eyebrow mt-16">{t.experience.educationLabel}</h3>
+    <ol class="mt-4 grid gap-px overflow-hidden border border-rule-accent bg-rule-accent sm:grid-cols-2">
+      {t.experience.education.map((e) => (
+        <li class="org-row flex flex-col gap-4 bg-paper p-6 sm:p-7">
+          <div class="flex h-10 items-center"><Logo org={e.org} /></div>
+          <div>
+            <h4 class="text-base leading-snug font-medium text-ink">{e.degree}</h4>
+            <p class="mt-1 text-sm text-ink-soft">{orgs[e.org].name}</p>
+            <p class="mt-2 text-xs text-muted">
+              {e.place} · <span class="tabular-nums">{e.dates}</span>
+            </p>
+            {e.note && <p class="mt-2 text-xs leading-relaxed text-muted">{e.note}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- ── Skills & credentials ─────────────────────────────────────────────── -->
+<section id="credentials" class="scroll-mt-20 border-b border-rule-accent">
+  <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+    <SectionHead eyebrow={t.credentials.eyebrow} title={t.credentials.title} lede={t.credentials.lede} />
+
+    <div class="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {t.credentials.skills.map((g) => (
+        <div>
+          <h3 class="text-sm font-medium text-ink">{g.group}</h3>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            {g.items.map((item) => <Tag label={item} />)}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 grid gap-12 md:grid-cols-[3fr_2fr] md:gap-16">
+      <div>
+        <h3 class="eyebrow">{t.credentials.certsLabel}</h3>
+        <ul class="mt-4 border-t border-rule-accent">
+          {t.credentials.certs.map((c) => (
+            <li class="org-row flex items-center gap-4 border-b border-rule-accent py-4">
+              <div class="flex w-10 shrink-0 justify-center"><Logo org={c.org} /></div>
+              <div class="min-w-0">
+                <p class="text-sm leading-snug font-medium text-ink">{c.name}</p>
+                <p class="mt-1 flex items-center gap-2 text-xs text-muted">
+                  {c.active && <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />}
+                  {orgs[c.org].name} · {c.status}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="eyebrow">{t.credentials.languagesLabel}</h3>
+        <dl class="mt-4 border-t border-rule-accent">
+          {t.credentials.languages.map((l) => (
+            <div class="flex items-baseline justify-between gap-6 border-b border-rule-accent py-4">
+              <dt class="text-sm font-medium text-ink">{l.name}</dt>
+              <dd class="text-right text-xs leading-relaxed text-muted">{l.level}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Approach ─────────────────────────────────────────────────────────── -->
 <section id="approach" class="scroll-mt-20 border-b border-rule-accent bg-wash">
   <div class="mx-auto max-w-5xl px-6 py-20 sm:py-24">
@@ -119,6 +217,17 @@ const t = content[locale];
         ))}
       </div>
     </div>
+
+    <h3 class="eyebrow mt-16">{t.about.placesLabel}</h3>
+    <ol class="mt-4 grid gap-px overflow-hidden border border-rule-accent bg-rule-accent sm:grid-cols-2 lg:grid-cols-4">
+      {t.about.places.map((pl) => (
+        <li class="flex flex-col gap-2 bg-paper p-6">
+          <p class="text-xs tracking-[0.08em] text-accent-strong uppercase tabular-nums">{pl.years}</p>
+          <h4 class="text-lg font-medium text-ink">{pl.country}</h4>
+          <p class="text-sm leading-relaxed text-pretty text-muted">{pl.body}</p>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>
 

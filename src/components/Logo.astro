@@ -1,0 +1,26 @@
+---
+/**
+ * An organisation's mark in the site's single-tone treatment.
+ * Decorative: the organisation's name is always printed beside it, so the
+ * image carries empty alt text rather than repeating the name to screen readers.
+ */
+import { orgs, type OrgKey } from '../i18n/content';
+import { brand } from '../brand/brand';
+
+interface Props { org: OrgKey; class?: string }
+const { org, class: klass = '' } = Astro.props;
+const o = orgs[org];
+const src = org === 'self' ? brand.mark : o.logo;
+const width = Math.round(o.h * o.aspect);
+---
+<img
+  src={src}
+  alt=""
+  aria-hidden="true"
+  width={width}
+  height={o.h}
+  loading="lazy"
+  decoding="async"
+  class:list={['logo shrink-0', org === 'self' && 'logo-self', klass]}
+  style={`height:${o.h}px;width:${width}px`}
+/>

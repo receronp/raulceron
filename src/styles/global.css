@@ -72,6 +72,16 @@ body {
   color: var(--brand-accent-strong);
 }
 
+/* Organisation marks in one tone, so a column of logos reads as part of the
+   page rather than a patchwork of other companies' brand colours. */
+.logo {
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: opacity 150ms;
+}
+.logo-self { filter: none; opacity: 1; }
+.org-row:hover .logo { opacity: 1; }
+
 .wordmark {
   letter-spacing: 0.22em;
   text-indent: 0.22em;

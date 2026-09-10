@@ -23,6 +23,8 @@ npm run preview  # serve the build
 | `src/layouts/Base.astro` | Head, header, footer, font loading, brand CSS vars |
 | `src/components/Home.astro` | Every section of the page, driven by `content.ts` |
 | `src/components/Frame.astro` | The corner-bracket motif from the identity |
+| `src/components/Logo.astro` | Employer/school/certifier marks, single-tone, sized from `orgs` in `content.ts` |
+| `public/logos/` | Those marks (sources listed above `orgs` in `content.ts`) |
 | `src/styles/global.css` | Tailwind import + design tokens in `@theme` |
 | `public/brand/` | Outlined logo SVGs for both brands |
 
@@ -34,6 +36,13 @@ Two routes only: `/` (English, default, unprefixed) and `/es/`.
 describes real work in the sibling repositories under `~/projects`. Do not add a
 capability the practice cannot deliver, and never invent metrics, dates, client
 headcounts or testimonials.
+
+**Career history comes from the CV and LinkedIn.** The Experience, Skills and
+About-countries sections are grounded in the CV PDF in the repo root and the
+LinkedIn profile (receronp). The PDF is gitignored (`*.pdf`) because it carries
+a personal phone number — never commit it or stage with `git add -A`.
+Employers and schools are named; they are employment history, not clients.
+Next-e (2020) is omitted at the owner's request.
 
 **Clients are anonymised on purpose.** Several sibling repos hold production
 credentials, a confidential commercial proposal, and client commercial documents.

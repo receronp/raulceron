@@ -16,3 +16,6 @@ node_modules/
 # logs
 npm-debug.log*
 *.log
+
+# personal documents (CVs, exports) — never publish
+*.pdf
